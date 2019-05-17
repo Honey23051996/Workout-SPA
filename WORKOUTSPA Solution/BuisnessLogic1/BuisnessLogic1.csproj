@@ -52,44 +52,10 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkoutContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WorkoutContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WorkoutContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WorkoutContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WorkoutContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WorkoutContext.edmx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EntityDeploy Include="WorkoutContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WorkoutContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="WorkoutContext.edmx.diagram">
-      <DependentUpon>WorkoutContext.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="WorkoutContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WorkoutContext.edmx</DependentUpon>
-      <LastGenOutput>WorkoutContext.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="WorkoutContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WorkoutContext.edmx</DependentUpon>
-      <LastGenOutput>WorkoutContext.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
