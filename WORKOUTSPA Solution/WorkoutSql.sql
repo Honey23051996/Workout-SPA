@@ -25,3 +25,10 @@ comment varchar(64),
 statuss bit,
 constraint Fk_workout_active_workout_collection foreign key(workout_id) references workout_collection(workout_id)
 )
+alter table workout_active
+add id int
+alter table workout_active
+drop column id
+alter table workout_active
+add id int
+constraint pk_workout_active_id primary key(id)
