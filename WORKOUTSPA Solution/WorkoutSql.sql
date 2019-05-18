@@ -32,3 +32,7 @@ drop column id
 alter table workout_active
 add id int
 constraint pk_workout_active_id primary key(id)
+
+insert into workout_category values('xyzz')
+insert into workout_category values('jogging')
+select*from workout_category

@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuisnessLogic.Test", "Buisn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{2226FFF1-0EDE-4109-A101-616A7AB7DB49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutAngularr", "WorkoutAngularr\WorkoutAngularr.csproj", "{13A1C1F8-4036-4D0E-A8E1-CA1E3F9FADD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkoutAngularr", "WorkoutAngularr\WorkoutAngularr.csproj", "{13A1C1F8-4036-4D0E-A8E1-CA1E3F9FADD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

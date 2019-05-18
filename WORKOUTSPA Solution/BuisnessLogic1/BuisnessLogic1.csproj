@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="ContextWorkout.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -67,6 +66,7 @@
       <DependentUpon>ContextWorkout.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkoutRepository.cs" />
     <Compile Include="workout_active.cs">
       <DependentUpon>ContextWorkout.tt</DependentUpon>
     </Compile>
