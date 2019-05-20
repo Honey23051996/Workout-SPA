@@ -42,13 +42,13 @@ import { CreateComponent } from './create/create.component';
     RouterModule.forRoot([
      
       { path: 'view-all-category', component: ViewAllCategoryComponent },
-      { path: 'add-category', component: AddCategoryComponent },
+     
       { path: 'edit-category/:id', component: EditCategoryComponent },
       { path: 'delete-category/:id', component: DeleteCategoryComponent },
       { path: '', redirectTo: 'view-all-category', pathMatch: 'full' },
-       { path: 'workout-va', component: WorkoutVaComponent },
+      { path: 'workout-va', component: WorkoutVaComponent },
       { path: 'track', component: TrackComponent },
-      { path: 'create', component: CreateComponent },
+      { path: 'create', component: CreateComponent }
 
 
       

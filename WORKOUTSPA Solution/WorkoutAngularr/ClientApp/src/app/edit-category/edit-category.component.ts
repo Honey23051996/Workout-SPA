@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder, NgForm } from '@angular/forms';
 import { WorkoutService } from '../workout.service';
@@ -11,30 +11,29 @@ import { Category } from '../Category';
 })
 
 export class EditCategoryComponent implements OnInit{
+  public click: boolean= true;
   frmCate: FormGroup;
+  @Input() NameAdd: Category;
+
 
   constructor(private currentRoute: ActivatedRoute, private service: WorkoutService, private fb: FormBuilder) { }
   get f() {
     return this.frmCate.controls;
   }
+  
 
   ngOnInit() {
     this.frmCate = this.fb.group({
-      id: new FormControl('', [Validators.required]),
-      name: new FormControl('', [Validators.required, Validators.minLength(3)])
+
+      name: new FormControl(this.NameAdd.category_name, [Validators.required, Validators.minLength(3)])
     });
-    let id = this.currentRoute.snapshot.paramMap.get('id');
-    this.service.getById(id).subscribe(
-      (data) => {
-        this.f.id.setValue(data.category_id);
-        this.f.name.setValue(data.category_name);
-      },
-      (error) => alert('Not Found')
-    );
+    let id = this.currentRoute.snapshot.paramMap.get('id'); 
+    
 
 
 
   }
+
 
   saveForm(frm: NgForm) {
     if (frm.valid) {
@@ -44,5 +43,13 @@ export class EditCategoryComponent implements OnInit{
         (error) => console.log(error)
       );
     }
+  
+  }
+  public Enable(): void {
+    this.f.name.enable();
+  }
+  public Disabled(): void {
+    this.f.name.disable();
+  }
   }
 }
