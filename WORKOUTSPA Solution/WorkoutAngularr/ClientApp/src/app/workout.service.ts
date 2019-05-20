@@ -12,4 +12,22 @@ export class WorkoutService {
   getAll(): Observable<Category[]> {
     return this.http.get <Category[]>(this.url);
   }
+  getById(id: string): Observable<Category> {
+    return this.http.get<Category>(this.url + `/${id}`);
+  }
+
+  save(cate: Category) {
+    return this.http.post(this.url, cate);
+  }
+
+  update(cate: Category) {
+    return this.http.put(this.url, cate);
+  }
+
+  delete(id: number) {
+    return this.http.delete(this.url + `/${id}`);
+  }
+
+
+
 }

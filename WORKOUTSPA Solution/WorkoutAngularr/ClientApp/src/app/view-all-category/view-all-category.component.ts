@@ -15,7 +15,7 @@ export class ViewAllCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.service.getAll().subscribe(
-      (data) => console.log(data),
+      (data)=>this.Categories=data,
       (error) => console.log(error)
 );
   }

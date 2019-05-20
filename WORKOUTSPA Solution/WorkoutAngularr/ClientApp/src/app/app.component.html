@@ -1,15 +1,37 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a [routerLink]="['/view-all-category']" class="nav-link" routerLinkActive="active">View Category</a>
-    </li>
-    
-  </ul>
-</nav>
+<!DOCTYPE html>
+<html>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12"></div>
-    <router-outlet></router-outlet>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="header">
+    <h1 align="center">WORKOUT TRACKER</h1>
+    <div class="header-center">
+
+    </div>
   </div>
-</div>
+
+  <div class="bg-img">
+    <div class="container">
+      <div class="topnav">
+        <a [routerLink]="['/workout-va']" class="nav-link" routerLinkActive="active">View All</a>
+        <a [routerLink]="['/create']" class="nav-link" routerLinkActive="active">Create</a>
+        <a [routerLink]="['/view-all-category']" class="nav-link" routerLinkActive="active">Category</a>
+        <a [routerLink]="['/track']" class="nav-link" routerLinkActive="active">Track</a>
+
+
+      </div>
+
+
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</body>
+
+
+</html>

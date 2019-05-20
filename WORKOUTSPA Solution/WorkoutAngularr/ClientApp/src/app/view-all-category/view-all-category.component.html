@@ -1,3 +1,20 @@
-<p>
-  view-all-category works!
-</p>
+<table class="table">
+  <tr>
+    
+    <th>CATEGORY NAME</th>
+    <th></th>
+  </tr>
+  <tr style="color:white" *ngFor="let cate of Categories">
+
+    <td>{{cate.category_name}}</td>
+    <td>
+      <a [routerLink]="['/edit-category',cate.category_id]">Edit</a> |
+      <a [routerLink]="['/delete-category',cate.category_id]">Delete</a>|
+      <a [routerLink]="['/add-category',cate.category_id]">Add</a>
+
+
+    </td>
+
+
+  </tr>
+</table>
