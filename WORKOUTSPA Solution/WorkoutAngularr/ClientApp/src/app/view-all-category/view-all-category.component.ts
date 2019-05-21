@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WorkoutService } from '../workout.service';
 import { Category } from '../Category';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-view-all-category',
@@ -9,9 +10,11 @@ import { dashCaseToCamelCase } from '@angular/compiler/src/util';
   styleUrls: ['./view-all-category.component.css']
 })
 export class ViewAllCategoryComponent implements OnInit {
-
+  cate: string = '';
+   
   Categories: Category[]
-  constructor(private service: WorkoutService) {}
+  constructor(private service: WorkoutService) { }
+  
 
   ngOnInit() {
     this.service.getAll().subscribe(
@@ -27,6 +30,19 @@ export class ViewAllCategoryComponent implements OnInit {
       (error) => alert("Failed to add")
     );
   }
+  Edit($event) {
+    this.service.update($event).subscribe(
+      (data) => alert('updated'),
+      (error) => alert("Failed to update")
+    );
+  }
+  Delete($event) {
+    this.service.delete($event.category_id).subscribe(
+      (data) => alert('Deleted'),
+      (error) => alert('Failed to delete'));
+   
+  }
+
  
 
 }

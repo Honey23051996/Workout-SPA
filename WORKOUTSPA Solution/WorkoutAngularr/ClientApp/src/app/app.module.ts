@@ -18,6 +18,7 @@ import { DeleteCategoryComponent } from './delete-category/delete-category.compo
 import { WorkoutVaComponent } from './workout-va/workout-va.component';
 import { TrackComponent } from './track/track.component';
 import { CreateComponent } from './create/create.component';
+import { FilterPipe } from './SearchBox';
 
 
 
@@ -30,7 +31,9 @@ import { CreateComponent } from './create/create.component';
     DeleteCategoryComponent,
     WorkoutVaComponent,
     TrackComponent,
-    CreateComponent
+    CreateComponent,
+    FilterPipe
+    
 
 
   ],
