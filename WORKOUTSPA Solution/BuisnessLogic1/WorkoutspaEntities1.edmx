@@ -31,8 +31,8 @@
           <Property Name="workout_title" Type="varchar" MaxLength="128" />
           <Property Name="workout_note" Type="varchar" MaxLength="256" />
           <Property Name="calories_burn_per_min" Type="int" Nullable="false" />
-          <Property Name="category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="workout_id" Type="int" Nullable="false" />
+          <Property Name="category_id" Type="int" Nullable="false" />
+          <Property Name="workout_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <Association Name="Fk_workout_active_workout_collection">
           <End Role="workout_collection" Type="Self.workout_collection" Multiplicity="1" />
@@ -46,7 +46,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Fk_workout_collection_workout_category">
+        <Association Name="FK_workout_collection_workout_category">
           <End Role="workout_category" Type="Self.workout_category" Multiplicity="1" />
           <End Role="workout_collection" Type="Self.workout_collection" Multiplicity="*" />
           <ReferentialConstraint>
@@ -66,7 +66,7 @@
             <End Role="workout_collection" EntitySet="workout_collection" />
             <End Role="workout_active" EntitySet="workout_active" />
           </AssociationSet>
-          <AssociationSet Name="Fk_workout_collection_workout_category" Association="Self.Fk_workout_collection_workout_category">
+          <AssociationSet Name="FK_workout_collection_workout_category" Association="Self.FK_workout_collection_workout_category">
             <End Role="workout_category" EntitySet="workout_category" />
             <End Role="workout_collection" EntitySet="workout_collection" />
           </AssociationSet>
@@ -95,7 +95,7 @@
           </Key>
           <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="category_name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="workout_collection" Relationship="Self.Fk_workout_collection_workout_category" FromRole="workout_category" ToRole="workout_collection" />
+          <NavigationProperty Name="workout_collection" Relationship="Self.FK_workout_collection_workout_category" FromRole="workout_category" ToRole="workout_collection" />
         </EntityType>
         <EntityType Name="workout_collection">
           <Key>
@@ -104,10 +104,10 @@
           <Property Name="workout_title" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Name="workout_note" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
           <Property Name="calories_burn_per_min" Type="Int32" Nullable="false" />
-          <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="workout_id" Type="Int32" Nullable="false" />
+          <Property Name="category_id" Type="Int32" Nullable="false" />
+          <Property Name="workout_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="workout_active" Relationship="Self.Fk_workout_active_workout_collection" FromRole="workout_collection" ToRole="workout_active" />
-          <NavigationProperty Name="workout_category" Relationship="Self.Fk_workout_collection_workout_category" FromRole="workout_collection" ToRole="workout_category" />
+          <NavigationProperty Name="workout_category" Relationship="Self.FK_workout_collection_workout_category" FromRole="workout_collection" ToRole="workout_category" />
         </EntityType>
         <Association Name="Fk_workout_active_workout_collection">
           <End Role="workout_collection" Type="Self.workout_collection" Multiplicity="1" />
@@ -121,7 +121,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Fk_workout_collection_workout_category">
+        <Association Name="FK_workout_collection_workout_category">
           <End Role="workout_category" Type="Self.workout_category" Multiplicity="1" />
           <End Role="workout_collection" Type="Self.workout_collection" Multiplicity="*" />
           <ReferentialConstraint>
@@ -133,7 +133,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="WorkoutspaEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WorkoutspaEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="workout_active" EntityType="Self.workout_active" />
           <EntitySet Name="workout_category" EntityType="Self.workout_category" />
           <EntitySet Name="workout_collection" EntityType="Self.workout_collection" />
@@ -141,7 +141,7 @@
             <End Role="workout_collection" EntitySet="workout_collection" />
             <End Role="workout_active" EntitySet="workout_active" />
           </AssociationSet>
-          <AssociationSet Name="Fk_workout_collection_workout_category" Association="Self.Fk_workout_collection_workout_category">
+          <AssociationSet Name="FK_workout_collection_workout_category" Association="Self.FK_workout_collection_workout_category">
             <End Role="workout_category" EntitySet="workout_category" />
             <End Role="workout_collection" EntitySet="workout_collection" />
           </AssociationSet>
@@ -151,7 +151,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WorkoutspaModelStoreContainer" CdmEntityContainer="WorkoutspaEntities1">
+        <EntityContainerMapping StorageEntityContainer="WorkoutspaModelStoreContainer" CdmEntityContainer="WorkoutspaEntities">
           <EntitySetMapping Name="workout_active">
             <EntityTypeMapping TypeName="WorkoutspaModel.workout_active">
               <MappingFragment StoreEntitySet="workout_active">

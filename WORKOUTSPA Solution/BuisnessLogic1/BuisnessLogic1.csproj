@@ -50,57 +50,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContextWorkout.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ContextWorkout.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="ContextWorkout.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ContextWorkout.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ContextWorkout.Designer.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ContextWorkout.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkoutCollection.cs" />
     <Compile Include="WorkoutRepository.cs" />
+    <Compile Include="WorkoutspaEntities1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkoutspaEntities1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkoutspaEntities1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkoutspaEntities1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkoutspaEntities1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkoutspaEntities1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="workout_active.cs">
-      <DependentUpon>ContextWorkout.tt</DependentUpon>
+      <DependentUpon>WorkoutspaEntities1.tt</DependentUpon>
     </Compile>
     <Compile Include="workout_category.cs">
-      <DependentUpon>ContextWorkout.tt</DependentUpon>
+      <DependentUpon>WorkoutspaEntities1.tt</DependentUpon>
     </Compile>
     <Compile Include="workout_collection.cs">
-      <DependentUpon>ContextWorkout.tt</DependentUpon>
+      <DependentUpon>WorkoutspaEntities1.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="ContextWorkout.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ContextWorkout.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="ContextWorkout.edmx.diagram">
-      <DependentUpon>ContextWorkout.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="WorkoutspaEntities1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WorkoutspaEntities1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="WorkoutspaEntities1.edmx.diagram">
+      <DependentUpon>WorkoutspaEntities1.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ContextWorkout.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ContextWorkout.edmx</DependentUpon>
-      <LastGenOutput>ContextWorkout.Context.cs</LastGenOutput>
-    </Content>
     <Content Include="ContextWorkout.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ContextWorkout.edmx</DependentUpon>
       <LastGenOutput>ContextWorkout.cs</LastGenOutput>
+    </Content>
+    <Content Include="WorkoutspaEntities1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WorkoutspaEntities1.edmx</DependentUpon>
+      <LastGenOutput>WorkoutspaEntities1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="WorkoutspaEntities1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WorkoutspaEntities1.edmx</DependentUpon>
+      <LastGenOutput>WorkoutspaEntities1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

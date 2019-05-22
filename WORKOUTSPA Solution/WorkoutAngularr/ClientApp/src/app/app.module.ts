@@ -19,6 +19,10 @@ import { WorkoutVaComponent } from './workout-va/workout-va.component';
 import { TrackComponent } from './track/track.component';
 import { CreateComponent } from './create/create.component';
 import { FilterPipe } from './SearchBox';
+import { WorkkService } from './workk.service';
+import { CPipe } from './CustomPipe';
+import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
+
 
 
 
@@ -32,11 +36,10 @@ import { FilterPipe } from './SearchBox';
     WorkoutVaComponent,
     TrackComponent,
     CreateComponent,
-    FilterPipe
-    
-
-
-  ],
+    EditWorkoutComponent,
+    FilterPipe,
+   CPipe
+    ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
@@ -51,21 +54,12 @@ import { FilterPipe } from './SearchBox';
       { path: '', redirectTo: 'view-all-category', pathMatch: 'full' },
       { path: 'workout-va', component: WorkoutVaComponent },
       { path: 'track', component: TrackComponent },
-      { path: 'create', component: CreateComponent }
+      { path: 'create', component: CreateComponent },
+      { path: 'edit-workout/:id', component: EditWorkoutComponent }
 
-
-      
-     
-
-
-      
-      
-
-      
-      
-    ])
+  ])
   ],
-  providers: [WorkoutService],
+  providers: [WorkoutService, WorkkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

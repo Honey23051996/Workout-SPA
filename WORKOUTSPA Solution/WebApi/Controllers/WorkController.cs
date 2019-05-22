@@ -10,7 +10,7 @@ namespace WebApi.Controllers
 {
     public class WorkController : ApiController
     {
-       WorkoutspaEntities1 db = new WorkoutspaEntities1();
+        WorkoutspaEntities db = new WorkoutspaEntities();
 
         public IHttpActionResult Get()
         {

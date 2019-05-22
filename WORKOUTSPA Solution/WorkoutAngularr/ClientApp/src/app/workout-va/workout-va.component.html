@@ -1,1 +1,10 @@
-﻿<div style="border: 1px solid red">Workout-va Component</div>
+<div class="col-md-12">
+  <h1>Workout Tracker</h1>
+  <input type="text" class="form-control" name="search" [(ngModel)]="wrk" />
+  <hr />
+  <div *ngFor="let wrk of Workouts | CPipe: wrk">
+    <app-edit-workout [WorkAdd]="wrk" ></app-edit-workout>
+  </div>
+  </div>
+
+

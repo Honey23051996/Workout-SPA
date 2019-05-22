@@ -11,11 +11,12 @@ create table workout_collection(
 workout_title varchar(128),
 workout_note varchar(256),
 calories_burn_per_min int not null,
-category_id int identity not null,
-workout_id int not null,
+category_id int not null,
+workout_id int identity not null,
 constraint pk_collection_id primary key(workout_id),
 constraint Fk_workout_collection_workout_category foreign key(category_id) references workout_category(category_id)
 )
+
 create table workout_active(
 workout_id int  not null,
 start_time time ,
@@ -36,3 +37,11 @@ constraint pk_workout_active_id primary key(id)
 insert into workout_category values('xyzz')
 insert into workout_category values('jogging')
 select*from workout_category
+select*from workout_collection
+
+
+insert into workout_collection values('abcccc','hhbhdbhxhxhhx',1,12)
+select*from workout_collection
+
+
+
