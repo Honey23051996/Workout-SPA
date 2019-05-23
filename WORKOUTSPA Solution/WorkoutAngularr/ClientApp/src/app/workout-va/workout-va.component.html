@@ -3,7 +3,7 @@
   <input type="text" class="form-control" name="search" [(ngModel)]="wrk" />
   <hr />
   <div *ngFor="let wrk of Workouts | CPipe: wrk">
-    <app-edit-workout [WorkAdd]="wrk" ></app-edit-workout>
+    <app-edit-workout [WorkAdd]="wrk" (WorkoutEdit)="EditWorkout($event)"(WorkoutDelete)=" DeleteWorkout($event)"></app-edit-workout>
   </div>
   </div>
 

@@ -3,9 +3,9 @@ import { Workout } from '../Workout';
 import { WorkkService } from '../workk.service';
 
 @Component({
-    selector: 'app-workout-va',
-    templateUrl: './workout-va.component.html',
-    styleUrls: ['./workout-va.component.css']
+  selector: 'app-workout-va',
+  templateUrl: './workout-va.component.html',
+  styleUrls: ['./workout-va.component.css']
 })
 export class WorkoutVaComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class WorkoutVaComponent implements OnInit {
       (error) => console.log(error)
     );
   }
-  }
+
   EditWorkout($event) {
     this.service1.update($event).subscribe(
       (data) => alert('updated'),
@@ -26,7 +26,7 @@ export class WorkoutVaComponent implements OnInit {
     );
   }
   DeleteWorkout($event) {
-    this.service1.delete($event.category_id).subscribe(
+    this.service1.delete($event.workout_id).subscribe(
       (data) => alert('Deleted'),
       (error) => alert('Failed to delete'));
 

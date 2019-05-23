@@ -89,5 +89,25 @@ namespace BuisnessLogic1
                 throw ex;
             }
         }
+
+        public workout_collection Get(int id)
+        {
+            workout_collection objWork = null;
+
+            try
+            {
+                WorkoutspaEntities db = new WorkoutspaEntities();
+                objWork = (from obj in db.workout_collection
+                           where obj.workout_id == id
+                           select obj).First();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return objWork;
+
+        }
     }
 }

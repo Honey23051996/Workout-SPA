@@ -1,0 +1,40 @@
+<form novalidate [formGroup]="frmWrk" (ngSubmit)="saveForm(frmWrk)">
+
+  <div class="form-group col-md-12">
+
+    <label>Title</label>
+    <input type="text" name="title" id="title" formControlName="title" class="form-control" />
+  </div>
+  <div class="form-group col-md-12">
+    <label>Note</label>
+    <textarea type="text" rows="10" cols="50" name="note" id="note" formControlName="note" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Calories Burnt Per Min</label>
+    <div class="form-group form-inline">
+      <input type="text" name="Calory" id="Calory" formControlName="Calory" class="form-control" />
+      <button type="button" class="btn btn-success" (click)="add()" style="margin-left:5px">+</button>
+      <button type="button" class="btn btn-danger" (click)="minus()" style="margin-left:5px">-</button>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Category</label>
+    <select class="form-control" formControlName="category">
+      <option *ngFor="let cate of category" value="{{cate.category_id}}">{{cate.category_name}}</option>
+    </select>
+  </div>
+  <div class="form-group col-md-12">
+    <button type="submit" [disabled]="!frmWrk.valid" class="btn btn-success btn-lg">Save</button>
+    <a [routerLink]="['/edit-workout']" class="btn btn-secondary ml-3">Cancel</a>
+  </div>
+
+
+
+
+
+
+
+
+
+</form>

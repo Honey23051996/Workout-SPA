@@ -14,7 +14,9 @@ export class WorkkService {
   save(wrk: Workout) {
     return this.http.post(this.url, wrk);
   }
-
+  getById(id: string): Observable<Workout> {
+    return this.http.get<Workout>(this.url + `/${id}`);
+  }
 
   delete(id: number) {
     return this.http.delete(this.url + `/${id}`);

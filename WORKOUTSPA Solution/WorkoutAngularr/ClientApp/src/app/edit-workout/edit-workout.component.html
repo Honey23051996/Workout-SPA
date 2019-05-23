@@ -7,8 +7,9 @@
     </div>
     </div>
   <div class="form-group form-inline">
-    <button type="submit" class="btn btn-success btn-lg">Edit</button>
-    <button type="submit" class="btn btn-primary btn-lg">Delete</button>
+    <a class="btn btn-secondary" [routerLink]="['/edit-workout',WorkAdd.workout_id]">Edit</a>
+    
+      <button type="submit" class="btn btn-primary btn-lg" (click)="deleteFrm(frmWrk)">Delete</button>
     <button type="submit" class="btn btn-danger btn-lg">Start </button>
     <button type="submit" class="btn btn-info btn-lg">End</button>
 

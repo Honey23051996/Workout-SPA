@@ -37,6 +37,7 @@ export class ViewAllCategoryComponent implements OnInit {
     );
   }
   Delete($event) {
+    console.log($event);
     this.service.delete($event.category_id).subscribe(
       (data) => alert('Deleted'),
       (error) => alert('Failed to delete'));

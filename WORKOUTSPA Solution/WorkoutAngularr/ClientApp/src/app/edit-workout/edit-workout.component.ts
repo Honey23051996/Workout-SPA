@@ -30,7 +30,9 @@ export class EditWorkoutComponent implements OnInit {
     let id = this.currentRoute.snapshot.paramMap.get('id');
   }
   saveForm(frm: NgForm) {
-
+    if (frm.valid) {
+      this.f.title.disable();
+      this.click = false;
     let wrk: Workout = new Workout(frm.value.title, frm.value.note, frm.value.Calory, frm.value.category);
       this.service.update(wrk).subscribe(
         (data) => alert('updated'),
@@ -38,5 +40,15 @@ export class EditWorkoutComponent implements OnInit {
       );
     }
 
+  }
+  public Enable(): void {
+    this.f.title.enable();
+    this.click = true;
+
+  }
+
+  deleteFrm(frm: NgForm) {
+
+    this.WorkoutDelete.emit(this.WorkAdd);
   }
 }

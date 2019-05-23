@@ -22,6 +22,7 @@ import { FilterPipe } from './SearchBox';
 import { WorkkService } from './workk.service';
 import { CPipe } from './CustomPipe';
 import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
+import { ForEditWorkoutComponent } from './for-edit-workout/for-edit-workout.component';
 
 
 
@@ -36,6 +37,7 @@ import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
     WorkoutVaComponent,
     TrackComponent,
     CreateComponent,
+    ForEditWorkoutComponent,
     EditWorkoutComponent,
     FilterPipe,
    CPipe
@@ -49,13 +51,11 @@ import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
      
       { path: 'view-all-category', component: ViewAllCategoryComponent },
      
-      { path: 'edit-category/:id', component: EditCategoryComponent },
-      { path: 'delete-category/:id', component: DeleteCategoryComponent },
       { path: '', redirectTo: 'view-all-category', pathMatch: 'full' },
       { path: 'workout-va', component: WorkoutVaComponent },
       { path: 'track', component: TrackComponent },
       { path: 'create', component: CreateComponent },
-      { path: 'edit-workout/:id', component: EditWorkoutComponent }
+      { path: 'edit-workout/:id', component: ForEditWorkoutComponent }
 
   ])
   ],

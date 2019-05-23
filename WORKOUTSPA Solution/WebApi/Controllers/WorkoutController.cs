@@ -65,5 +65,22 @@ namespace WebApi.Controllers
             }
 
         }
+
+        public IHttpActionResult Get(int id)
+        {
+
+            if (id < 0)
+            {
+
+                return BadRequest("Invalid workoutid number ");
+
+            }
+            var Obj = db.workout_collection.Find(id);
+            if (Obj == null)
+            {
+                return NotFound();
+            }
+            return Ok(Obj);
+        }
     }
 }

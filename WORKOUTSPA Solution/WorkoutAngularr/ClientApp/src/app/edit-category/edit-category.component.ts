@@ -58,7 +58,8 @@ export class EditCategoryComponent implements OnInit{
   }
 
   deleteFrm(frm: NgForm) {
-    let cate= new Category(this.NameAdd.category_id, frm.value.name);
+    let cate = new Category(this.NameAdd.category_id, frm.value.name);
+    console.log(cate);
     this.CategoryDelete.emit(cate);
   }
  

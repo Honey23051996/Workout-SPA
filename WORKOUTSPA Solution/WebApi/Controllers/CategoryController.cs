@@ -8,7 +8,7 @@ using BuisnessLogic1;
 
 namespace WebApi.Controllers
 {
-    public class WorkController : ApiController
+    public class CategoryController : ApiController
     {
         WorkoutspaEntities db = new WorkoutspaEntities();
 
